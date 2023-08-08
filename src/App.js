@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
+import Form from "./components/Form";
 
 function App() {
   const [memberList, setMemberList] = useState([
@@ -9,16 +10,18 @@ function App() {
     { name: "Emre", old: "25", major: "Computer Science" },
     { name: "Selo", old: "25", major: "Agriculture Engineer" },
   ]);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>aaaa</p>
+
         {memberList.map((member, i) => (
-          <p key={i}>
+          <span key={i}>
             <strong> {member.name}</strong>-{member.major}-{member.old}
-          </p>
+          </span>
         ))}
+        <Form />
       </header>
     </div>
   );
